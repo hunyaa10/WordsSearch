@@ -1,0 +1,43 @@
+@import url(./reset.css);
+
+body {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+.grid {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
+}
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+.cell-click {
+  background-color: #bcbcbc;
+}
+.cell-found {
+  background-color: #4caf50;
+  color: white;
+}
+.answer p {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 14px;
+}
+.answer b {
+  font-weight: 700;
+}
