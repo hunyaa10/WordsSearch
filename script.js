@@ -85,35 +85,18 @@ function cellClick() {
   cells.forEach((cell) => {
     cell.addEventListener("click", () => {
       cell.classList.add("cell-click");
-    });
-  });
-}
-
-// 정답단어를 찾으면 셀 색상변경
-function correctClick() {
-  gridItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      if (item.dataset.word) {
-        const word = item.dataset.word;
-        const matchingItems = document.querySelectorAll(
-          `[data-word="${word}"]`
-        );
-        if (
-          Array.from(matchingItems).every((wordItem) =>
-            wordItem.classList.contains("found")
-          )
-        ) {
-          matchingItems.forEach((wordItem) =>
-            wordItem.classList.add("cell-found")
-          );
-        }
+      if (cell.dataset.word) {
+        cell.classList.add("cell-found");
       }
     });
   });
 }
 
+// 정답단어를 찾으면 이벤트발생
+function correctClick() {}
+
 createGrid();
 placeWords();
 randomWords();
 cellClick();
-correctClick();
+// correctClick();
